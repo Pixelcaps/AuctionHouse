@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "3520428861",
+    "firebase_url": "https://android-auction-house.firebaseio.com",
+    "project_id": "android-auction-house",
+    "storage_bucket": "android-auction-house.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3520428861:android:48d097bf530a09c7f82354",
+        "android_client_info": {
+          "package_name": "com.example.auctionhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3520428861-hkq81kaa0u5fqe257huk8dbmturta5e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0FgRibfIyfg7IN0sp8N1lPro3ZS1-mDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3520428861-hkq81kaa0u5fqe257huk8dbmturta5e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

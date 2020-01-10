@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AuctionHouse</string>
+    <string name="button_continue">Continue</string>
+    <string name="logout">Log out</string>
+</resources>
