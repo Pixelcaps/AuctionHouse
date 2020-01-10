@@ -28,7 +28,7 @@ public class ItemAdapter extends FirestoreRecyclerAdapter<Item, ItemAdapter.Item
     @Override
     protected void onBindViewHolder(@NonNull ItemHolder holder, int position, @NonNull Item model) {
         holder.textViewName.setText(model.getName());
-//        holder.textViewExpirationDate.setText(model.getExpirationDate());
+        holder.textViewExpirationDate.setText(model.getExpirationDate());
 //        holder.textViewStartPrice.setText(model.getStartPrice());
 //        holder.textViewCurrentBid.setText(model.getCurrentBid());
         holder.textViewSeller.setText(model.getSeller());
@@ -54,7 +54,7 @@ public class ItemAdapter extends FirestoreRecyclerAdapter<Item, ItemAdapter.Item
         public ItemHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.item_name);
-//            textViewExpirationDate = itemView.findViewById(R.id.item_expiration);
+            textViewExpirationDate = itemView.findViewById(R.id.item_expiration);
 //            textViewStartPrice = itemView.findViewById(R.id.item_start_price);
 //            textViewCurrentBid = itemView.findViewById(R.id.item_current_bid);
             textViewSeller = itemView.findViewById(R.id.item_seller);
