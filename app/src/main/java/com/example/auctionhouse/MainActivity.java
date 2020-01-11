@@ -9,18 +9,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
 import com.example.auctionhouse.R;
 
 import com.example.auctionhouse.adapter.ItemAdapter;
 import com.example.auctionhouse.model.Item;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser currentUser = mAuth.getCurrentUser();
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference auctionItemsRef = db.collection("items");
@@ -32,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FloatingActionButton buttonAddItem = findViewById(R.id.button_add_item);
+        buttonAddItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AddItemActivity.class));
+            }
+        });
         
         setupRecyclerView();
     }
@@ -48,6 +65,27 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnBidButtonClickListener(new ItemAdapter.OnBidButtonClickListener() {
+            @Override
+            public void onBidButtonClick(DocumentSnapshot documentSnapshot, int position) {
+                Item item = documentSnapshot.toObject(Item.class);
+                String id = documentSnapshot.getId();
+                DocumentReference bidItem = auctionItemsRef.document(id);
+                if (!(System.currentTimeMillis() >= Long.parseLong(item.getExpirationDate()))) {
+                    int bidValue = item.getCurrentBid();
+
+                    if (bidValue == 0) {
+                        bidValue = item.getStartPrice();
+                    } else {
+                        bidValue += 10;
+                    }
+                    String bidder = currentUser.getEmail();
+                    bidItem.update("currentBid", bidValue);
+                    bidItem.update("highestBidder", bidder);
+                }
+            }
+        });
     }
 
     @Override

@@ -1,5 +1,24 @@
 <resources>
     <string name="app_name">AuctionHouse</string>
-    <string name="button_continue">Continue</string>
+
     <string name="logout">Log out</string>
+    <string name="expired">EXPIRED</string>
+    <string name="offer_expiration_text">Offer Expiration:&#160;</string>
+    <string name="price_text">Price:&#160;</string>
+    <string name="current_bid_text">Current bid:&#160;</string>
+    <string name="seller_text">Seller:&#160;</string>
+    <string name="highest_bidder_text">Highest bidder:&#160;</string>
+    <string name="no_account_text">Don\'t have account? Sign up</string>
+    <string name="with_account_text">Already have an account? Log in</string>
+
+    <string name="name_hint">Name</string>
+    <string name="price_hint">Price</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+
+    <string name="button_continue">Continue</string>
+    <string name="button_signup">Sign Up</string>
+    <string name="select_date_button">Select Date</string>
+    <string name="select_time_button">Select Time</string>
+
 </resources>

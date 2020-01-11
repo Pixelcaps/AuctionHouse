@@ -3,19 +3,21 @@ package com.example.auctionhouse.model;
 public class Item {
 
     private String name;
-    private int expiration_date;
-    private int start_price;
-    private int current_bid;
+    private String expirationDate;
+    private int startPrice;
+    private int currentBid;
     private String seller;
+    private String highestBidder;
 
     public Item() {}
 
-    public Item(String name, int expiration_date, int start_price, int current_bid, String seller) {
+    public Item(String name, String expirationDate, int startPrice, int currentBid, String seller, String highestBidder) {
         this.name = name;
-        this.expiration_date = expiration_date;
-        this.start_price = start_price;
-        this.current_bid = current_bid;
+        this.expirationDate = expirationDate;
+        this.startPrice = startPrice;
+        this.currentBid = currentBid;
         this.seller = seller;
+        this.highestBidder = highestBidder;
     }
 
     public String getName() {
@@ -26,28 +28,24 @@ public class Item {
         this.name = name;
     }
 
-    public int getExpirationDate() {
-        return expiration_date;
+    public String getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setExpirationDate(int expirationDate) {
-        this.expiration_date = expirationDate;
-    }
+    public void setExpirationDate(String expirationDate) { this.expirationDate = expirationDate; }
 
-    public int getStartPrice() {
-        return start_price;
-    }
+    public int getStartPrice() { return startPrice; }
 
     public void setStartPrice(int startPrice) {
-        this.start_price = startPrice;
+        this.startPrice = startPrice;
     }
 
     public int getCurrentBid() {
-        return current_bid;
+        return currentBid;
     }
 
     public void setCurrentBid(int currentBid) {
-        this.current_bid = currentBid;
+        this.currentBid = currentBid;
     }
 
     public String getSeller() {
@@ -57,4 +55,8 @@ public class Item {
     public void setSeller(String seller) {
         this.seller = seller;
     }
+
+    public String getHighestBidder() { return highestBidder; }
+
+    public void setHighestBidder() { this.highestBidder = highestBidder; }
 }
