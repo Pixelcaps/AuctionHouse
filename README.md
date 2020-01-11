@@ -1,6 +1,6 @@
 # AuctionHouse
 
-This is a sample application built for my Mobile Operating Systems class for university. It's purpose is to emulate a store and auction house for various items. The application is integrated with Firebase, specifically the Authentication module and the Cloud Firestore NoSQL database. The app support authentification through email and password, but can be also be extended easily to have any type of social sign in available (including the new Apple one). The Firestore database has one collection to store the items put up for sale. Each item has 6 fields: name, seller, startPrice, expirationDate, highestBidder and currentBid. Also, any change made on the application can be seen in realtime.
+This is a sample application built for my Mobile Operating Systems class for university. It's purpose is to emulate a store and auction house for various items. The application is integrated with Firebase, specifically the Authentication module and the Cloud Firestore NoSQL database. The app support authentification through email and password, but can be also be extended easily to have any type of social sign in available (including the new Apple one). The Firestore database has one collection to store the items put up for sale. Each item has 6 fields: name, seller, startPrice, expirationDate, highestBidder and currentBid. Also, any change made in the application can be seen in realtime.
 
 
 The app has 4 screens:
